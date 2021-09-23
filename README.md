@@ -16,14 +16,16 @@ Using this plugin, if the command runs against you, you can target it to another
 Command output is redirected to you, so the target player cannot see the output. This means you can access the command result, and the target player does not know the command ran (depending on the what the command does)
 
 ## Key differences to /exec from my other plugin <a href="https://github.com/ShimmyMySherbet/ShimmysAdminTools">ShimmysAdminTools</a>
-I designed ShimmysAdminTools to provide some extremely useful tools, even including flight. However, one of the core principals of ShimmysAdminTools is that it should not have any dependencies/libraries.
+I designed ShimmysAdminTools to provide some extremely useful tools, even including flight. However, one of the core principals of ShimmysAdminTools is that it should not have any dependencies/libraries to make it super easy for anyone to install or update.
 
-The patching-free approach of ShimmysAdminTools works well for a default permissions setup, however it is incompatible with AdvancedPermissions or Openmod.
+The patching-free approach of ShimmysAdminTools works well for a default permissions setup, however, it is incompatible with AdvancedPermissions or Openmod.
 
 Since this plugin uses patching, it will still be compatible with Openmod and third party permission providers. (**Note:** This plugin will still only work for Rocketmod commands)
 
 ## Commands
 `/ExecPlayer [Player] [Command...]`
+
+If you are using ShimmysAdminTools (which already has a command named /exec, use /execplayer or disable /exec in ShimmysAdminTools)
 
 #### Examples:
 */Exec Shimmy /Ascend 100*
