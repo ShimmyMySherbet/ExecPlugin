@@ -21,7 +21,7 @@ namespace ShimmyMySherbet.ExecPlugin
 
         public string Syntax => "Exec [Player] [command...]";
 
-        public List<string> Aliases => new List<string>() { "ExecCommand" };
+        public List<string> Aliases => new List<string>() { "ExecCommand", "ExecPlayer" };
 
         public List<string> Permissions => new List<string>() { "ExecPlugin.Exec" };
 

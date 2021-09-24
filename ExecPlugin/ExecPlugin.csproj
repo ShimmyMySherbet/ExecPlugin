@@ -71,12 +71,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CancelExecCommand.cs" />
+    <Compile Include="ExecAllCommand.cs" />
     <Compile Include="ExecCommand.cs" />
     <Compile Include="ExecPlugin.cs" />
+    <Compile Include="ExecRepeating.cs" />
     <Compile Include="MessageBypass.cs" />
     <Compile Include="MessageManager.cs" />
     <Compile Include="PermissionsUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepeatManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
