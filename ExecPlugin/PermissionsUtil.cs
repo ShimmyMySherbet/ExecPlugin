@@ -14,10 +14,6 @@ namespace ShimmyMySherbet.ExecPlugin
         {
             var target1 = typeof(IRocketPlayerExtension).GetMethod("HasPermission", BindingFlags.Static | BindingFlags.Public);
             var replacement = typeof(PermissionsUtil).GetMethod("Patchpermissions", BindingFlags.NonPublic | BindingFlags.Static);
-
-            System.Console.WriteLine($"T1: {target1 != null}");
-            System.Console.WriteLine($"R: {replacement != null}");
-
             harmony.Patch(target1, null, new HarmonyMethod(replacement));
         }
 

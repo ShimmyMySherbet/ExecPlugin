@@ -4,7 +4,7 @@ using Rocket.Unturned.Player;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ShimmyMySherbet.ExecPlugin
+namespace ShimmyMySherbet.ExecPlugin.Commands
 {
     public class CancelExecCommand : IRocketCommand
     {
@@ -60,6 +60,8 @@ namespace ShimmyMySherbet.ExecPlugin
                 handle.Value.Item2.Cancel();
                 RepeatManager.m_handles.TryRemove(handle.Key, out var _);
             }
+
+            UnturnedChat.Say(caller, $"Canceled {matching.Length} auto execs");
         }
     }
 }

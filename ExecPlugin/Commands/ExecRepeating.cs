@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ShimmyMySherbet.ExecPlugin
+namespace ShimmyMySherbet.ExecPlugin.Commands
 {
     public class ExecRepeating : IRocketCommand
     {
@@ -101,9 +101,9 @@ namespace ShimmyMySherbet.ExecPlugin
 
             ThreadPool.QueueUserWorkItem(async (_) =>
             {
-                while (!handle.IsCancellationRequested)
+                while (!handle.IsCancellationRequested && RepeatManager.m_handles.ContainsKey(handleID))
                 {
-                    await Task.Delay(TimeSpan.FromSeconds(delayMS));
+                    await Task.Delay(TimeSpan.FromMilliseconds(delayMS));
 
                     TaskDispatcher.QueueOnMainThread(() =>
                     {
@@ -111,6 +111,7 @@ namespace ShimmyMySherbet.ExecPlugin
 
                         if (!isOnline)
                         {
+                            handle.Cancel();
                             UnturnedChat.Say(caller, $"Repeat Command for {targetPlayerName} '{string.Join(" ", array)}' expired; player disconnected.");
                             RepeatManager.m_handles.TryRemove(handleID, out var _);
                             return;
@@ -126,6 +127,7 @@ namespace ShimmyMySherbet.ExecPlugin
                         {
                             UnturnedChat.Say(caller, $"Repeat Command for {targetPlayerName} '{string.Join(" ", array)}' expired; Error.");
                             UnturnedChat.Say(caller, ex.Message);
+                            handle.Cancel();
                             RepeatManager.m_handles.TryRemove(handleID, out var _);
                             return;
                         }

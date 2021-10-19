@@ -71,12 +71,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CancelExecCommand.cs" />
-    <Compile Include="ExecAllCommand.cs" />
-    <Compile Include="ExecCommand.cs" />
+    <Compile Include="Commands\CancelExecCommand.cs" />
+    <Compile Include="Commands\ExecAllCommand.cs" />
+    <Compile Include="Commands\ExecCommand.cs" />
     <Compile Include="ExecPlugin.cs" />
-    <Compile Include="ExecRepeating.cs" />
-    <Compile Include="MessageBypass.cs" />
+    <Compile Include="Commands\ExecRepeating.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Models\MessageBypass.cs" />
     <Compile Include="MessageManager.cs" />
     <Compile Include="PermissionsUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

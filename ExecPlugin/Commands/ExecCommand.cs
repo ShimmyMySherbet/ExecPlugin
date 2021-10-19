@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace ShimmyMySherbet.ExecPlugin
+namespace ShimmyMySherbet.ExecPlugin.Commands
 {
     public class ExecCommand : IRocketCommand
     {

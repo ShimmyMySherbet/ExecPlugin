@@ -13,7 +13,7 @@ namespace ExecPlugin
         {
             base.LoadPlugin();
 
-            m_Harmony = new Harmony("Exec_Plugin");
+            m_Harmony = new Harmony("ExecPlugin");
 
             PermissionsUtil.Init(m_Harmony);
             MessageManager.Init(m_Harmony);
@@ -26,7 +26,7 @@ namespace ExecPlugin
             PermissionsUtil.SendDestroy();
             MessageManager.Destroy();
 
-            m_Harmony.UnpatchAll("Exec_Plugin");
+            m_Harmony.UnpatchAll("ExecPlugin");
         }
     }
 }

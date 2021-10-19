@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace ShimmyMySherbet.ExecPlugin
+namespace ShimmyMySherbet.ExecPlugin.Commands
 {
     public class ExecAllCommand : IRocketCommand
     {
@@ -26,7 +26,7 @@ namespace ShimmyMySherbet.ExecPlugin
 
         public void Execute(IRocketPlayer caller, string[] command)
         {
-            if (command.Length < 2)
+            if (command.Length == 0)
             {
                 UnturnedChat.Say(caller, Syntax);
                 return;

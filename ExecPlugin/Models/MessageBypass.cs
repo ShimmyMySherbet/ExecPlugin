@@ -1,6 +1,6 @@
 ﻿using Rocket.API;
 
-namespace ShimmyMySherbet.ExecPlugin
+namespace ShimmyMySherbet.ExecPlugin.Models
 {
     public class MessageBypass
     {

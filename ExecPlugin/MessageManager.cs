@@ -2,6 +2,7 @@
 using Rocket.API;
 using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
+using ShimmyMySherbet.ExecPlugin.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Reflection;
@@ -38,7 +39,6 @@ namespace ShimmyMySherbet.ExecPlugin
 
             m_DisableDirect[playerID] = val;
         }
-
 
         public static void RedirectMessages(ulong playerID, IRocketPlayer redirectTo)
         {
@@ -77,9 +77,11 @@ namespace ShimmyMySherbet.ExecPlugin
                 {
                     if (setting.CallbackPlayer != null)
                     {
+
                         player = setting.CallbackPlayer;
                         message = $"[EXEC] {message}";
-                        return true;
+
+                        return player.PlayerIsOnline();
                     }
                     else
                     {
